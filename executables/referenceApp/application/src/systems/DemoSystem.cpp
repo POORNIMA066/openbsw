@@ -111,7 +111,7 @@ void DemoSystem::cyclic()
     uint32_t const now               = getSystemTimeMs32Bit();
     uint32_t const deltaTimeMs       = now - previousSentTime;
     // Send a CAN frame every second.
-    if (deltaTimeMs >= 1000)
+    if (deltaTimeMs >= 10)
     {
         previousSentTime                       = now;
         ::can::ICanTransceiver* canTransceiver = _canSystem.getCanTransceiver(::busid::CAN_0);
